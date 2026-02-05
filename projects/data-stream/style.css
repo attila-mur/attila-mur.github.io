@@ -12,11 +12,11 @@ body {
   inset: 0;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* 👈 not centered vertically */
-  padding-top: 10vh;       /* 👈 control vertical offset */
+  align-items: flex-start;
+  padding-top: 5vh;      
   pointer-events: none;
   z-index: -1;
-  overflow: hidden;        /* 👈 allow clipping */
+  overflow: hidden;     
 }
 
 /* Stream list */
