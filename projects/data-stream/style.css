@@ -6,15 +6,17 @@ body {
   overflow: hidden;
 }
 
-/* Center column */
+/* Center column, but shifted upward */
 .stream-column {
   position: fixed;
   inset: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* 👈 not centered vertically */
+  padding-top: 10vh;       /* 👈 control vertical offset */
   pointer-events: none;
   z-index: -1;
+  overflow: hidden;        /* 👈 allow clipping */
 }
 
 /* Stream list */
@@ -24,7 +26,7 @@ body {
   margin: 0;
 
   width: min(720px, 90vw);
-  max-height: 80vh;
+  max-height: 100vh;
 
   font-family: "JetBrains Mono", monospace;
   font-size: clamp(1.8rem, 3vw, 3rem);
