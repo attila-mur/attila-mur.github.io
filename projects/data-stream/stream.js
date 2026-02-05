@@ -1,22 +1,36 @@
-const container = document.getElementById("stream");
-const MAX_LINES = 200;
+const stream = document.getElementById("stream");
+const MAX_ITEMS = 30;
+const FADE_START = 0.6; // bottom 40% fades
 
-function addLine(text) {
-  container.textContent += text + "\n";
+function addTitle(title) {
+  const li = document.createElement("li");
+  li.textContent = title;
 
-  const lines = container.textContent.split("\n");
-  if (lines.length > MAX_LINES) {
-    container.textContent = lines.slice(lines.length - MAX_LINES).join("\n");
+  // Add to top
+  stream.prepend(li);
+
+  // Trim list
+  while (stream.children.length > MAX_ITEMS) {
+    stream.removeChild(stream.lastChild);
   }
 
-  container.scrollTop = container.scrollHeight;
+  applyFade();
 }
 
-function formatLog(change) {
-  const time = new Date(change.timestamp).toLocaleTimeString();
-  const size = change.newlen - change.oldlen;
-  const sign = size >= 0 ? "+" : "";
-  return `[${time}] ${change.type.toUpperCase()} ${change.title} (${sign}${size} bytes)`;
+function applyFade() {
+  const items = Array.from(stream.children);
+  const total = items.length;
+
+  items.forEach((item, index) => {
+    const position = index / total;
+    if (position > FADE_START) {
+      const fade =
+        1 - (position - FADE_START) / (1 - FADE_START);
+      item.style.opacity = fade.toFixed(2);
+    } else {
+      item.style.opacity = 1;
+    }
+  });
 }
 
 async function fetchWikipedia() {
@@ -26,7 +40,7 @@ async function fetchWikipedia() {
         new URLSearchParams({
           action: "query",
           list: "recentchanges",
-          rcprop: "title|timestamp|sizes|type",
+          rcprop: "title",
           rclimit: "10",
           format: "json",
           origin: "*"
@@ -35,14 +49,14 @@ async function fetchWikipedia() {
 
     const data = await res.json();
     data.query.recentchanges.forEach(change => {
-      addLine(formatLog(change));
+      addTitle(change.title);
     });
-  } catch (err) {
-    addLine(`[ERROR] wikipedia fetch failed`);
+  } catch {
+    addTitle("…");
   }
 }
 
-// Initial fill
-setInterval(fetchWikipedia, 3000);
+// Start stream
 fetchWikipedia();
+setInterval(fetchWikipedia, 4000);
 
