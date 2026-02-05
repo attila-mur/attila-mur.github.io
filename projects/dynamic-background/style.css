@@ -1,0 +1,56 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full-page animated background */
+body {
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(
+    120deg,
+    #0f2027,
+    #203a43,
+    #2c5364
+  );
+  background-size: 300% 300%;
+  animation: gradientMove 20s ease infinite;
+  color: #ffffff;
+}
+
+/* Animation */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Content styling */
+.content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+  background: rgba(0, 0, 0, 0.35); /* keeps text readable */
+  backdrop-filter: blur(6px);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
