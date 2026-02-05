@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: #0b0d10;
+  background: #0a0c10;
   color: #eaeaea;
   font-family: system-ui, sans-serif;
   overflow: hidden;
@@ -9,49 +9,51 @@ body {
 /* Center column */
 .stream-column {
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: min(600px, 90vw);
-  transform: translateX(-50%);
-  padding: 2rem 1rem;
-  z-index: -1;
-  pointer-events: none;
-
+  inset: 0;
   display: flex;
+  justify-content: center;
   align-items: center;
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Stream list */
 #stream {
   list-style: none;
-  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  width: min(720px, 90vw);
+  max-height: 80vh;
+
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  line-height: 1.2;
+  font-weight: 500;
+
   color: #9affc8;
 
   display: flex;
   flex-direction: column;
 }
 
-/* Each line */
+/* Each title */
 #stream li {
-  opacity: 1;
-  transition: opacity 1s linear;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  transition: opacity 1.2s linear;
 }
 
 /* Foreground content */
 .content {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
   padding: 4rem;
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(6px);
-  position: relative;
-  z-index: 1;
 }
 
 h1 {
