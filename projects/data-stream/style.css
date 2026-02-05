@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  color: #e6e6e6;
+  background: #0b0d10;
+  overflow: hidden;
+}
+
+/* Background stream */
+#stream {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  padding: 2rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #8affc1;
+  opacity: 0.35;
+  filter: blur(0.3px);
+  white-space: pre;
+  pointer-events: none;
+}
+
+/* Foreground content */
+.content {
+  min-height: 100vh;
+  padding: 4rem;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
