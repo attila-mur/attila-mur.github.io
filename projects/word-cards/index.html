@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Language Cards</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+    <div class="card-container">
+      <div id="card" class="card">
+        <div class="front" id="frontWord">hello</div>
+        <div class="back" id="backWord">hola</div>
+      </div>
+    </div>
+
+    <input
+      id="answerInput"
+      placeholder="Type translation…"
+      autocomplete="off"
+    />
+
+    <div class="buttons">
+      <button id="checkBtn">Check</button>
+      <button id="nextBtn">Next</button>
+    </div>
+
+    <hr />
+
+    <div class="add-word">
+      <input id="wordA" placeholder="Word (Language A)" />
+      <input id="wordB" placeholder="Word (Language B)" />
+      <button id="addBtn">Add word pair</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
