@@ -14,8 +14,8 @@ html {
 
 body {
   margin: 0;
-  background: linear-gradient(180deg, #0b0f1a 0%, #07090f 100%);
-  color: #eaeaea;
+  background: linear-gradient(160deg, #0c1020 0%, #06080f 100%);
+  color: #e6e8ee;
   font-family: system-ui, sans-serif;
 }
 
@@ -99,8 +99,8 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 6rem 3rem;
-  background: var(--glass);
-  backdrop-filter: blur(8px);
+  background: rgba(8, 10, 18, 0.72);
+  backdrop-filter: blur(10px);
 }
 
 .hero h1 {
@@ -129,16 +129,17 @@ h2 {
 /* STACK */
 .stack-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 0.6rem;
 }
 
 .tag {
-  padding: 1rem;
-  border-radius: 12px;
+  padding: 0.45rem 0.5rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
   text-align: center;
-  background: rgba(255, 255, 255, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: rgba(255, 255, 255, 0.05);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .tag:hover {
@@ -155,7 +156,27 @@ h2 {
 
 /* EXPERIENCE */
 .job {
-  margin-bottom: 3rem;
+  margin-bottom: 4.5rem;
+}
+
+.job p {
+  max-width: 820px;
+  line-height: 1.6;
+}
+
+.job ul {
+  margin-top: 0.8rem;
+  line-height: 1.6;
+}
+
+.job p {
+  max-width: 820px;
+  line-height: 1.6;
+}
+
+.job ul {
+  margin-top: 0.8rem;
+  line-height: 1.6;
 }
 
 .date {
@@ -173,10 +194,40 @@ h2 {
   text-align: center;
 }
 
-.logos span {
-  margin: 0 1rem;
-  opacity: 0.7;
-  font-weight: 600;
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.logos img {
+  height: 32px;
+  max-width: 120px;
+  object-fit: contain;
+  opacity: 0.65;
+  filter: grayscale(100%);
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.logos img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.logos img {
+  height: 32px;
+  max-width: 120px;
+  object-fit: contain;
+  opacity: 0.65;
+  filter: grayscale(100%);
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.logos img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
 }
 
 /* CONTACT */
