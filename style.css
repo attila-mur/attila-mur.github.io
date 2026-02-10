@@ -62,3 +62,46 @@ h1 {
   font-size: 3rem;
 }
 
+.subtitle {
+  opacity: 0.8;
+  margin-bottom: 3rem;
+}
+
+section {
+  max-width: 720px;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 0.8rem;
+}
+
+.experience,
+.contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience li,
+.contact li {
+  margin-bottom: 0.4rem;
+}
+
+.cv-link {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border: 1px solid #9affc8;
+  color: #9affc8;
+  text-decoration: none;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.cv-link:hover {
+  background: rgba(154, 255, 200, 0.1);
+}
+
