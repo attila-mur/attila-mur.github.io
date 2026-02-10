@@ -1,7 +1,7 @@
 const stream = document.getElementById("stream");
 
-const MAX_ITEMS = 12;        // controls how many titles are visible
-const FADE_START_INDEX = 7; // when fading begins (0 = top)
+const MAX_ITEMS = 12;
+const FADE_START_INDEX = 7;
 
 async function fetchLatestWikipediaEdit() {
   try {
@@ -11,7 +11,7 @@ async function fetchLatestWikipediaEdit() {
           action: "query",
           list: "recentchanges",
           rcprop: "title",
-          rclimit: "1", // 👈 only the latest edit
+          rclimit: "1",
           format: "json",
           origin: "*"
         })
@@ -21,19 +21,14 @@ async function fetchLatestWikipediaEdit() {
     const title = data.query.recentchanges[0]?.title;
 
     if (title) addTitle(title);
-  } catch {
-    // fail silently — this is ambient, not critical
-  }
+  } catch {}
 }
 
 function addTitle(title) {
   const li = document.createElement("li");
   li.textContent = title;
-
-  // Add newest to top
   stream.prepend(li);
 
-  // Trim excess items
   while (stream.children.length > MAX_ITEMS) {
     stream.removeChild(stream.lastChild);
   }
@@ -42,9 +37,7 @@ function addTitle(title) {
 }
 
 function applyFade() {
-  const items = Array.from(stream.children);
-
-  items.forEach((item, index) => {
+  Array.from(stream.children).forEach((item, index) => {
     if (index < FADE_START_INDEX) {
       item.style.opacity = "1";
     } else {
@@ -56,7 +49,5 @@ function applyFade() {
   });
 }
 
-// Prime the stream
 fetchLatestWikipediaEdit();
 setInterval(fetchLatestWikipediaEdit, 3000);
-
