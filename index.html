@@ -31,11 +31,29 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
-    <button class="nav-toggle" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="nav-actions">
+      <button class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+        <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="theme-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </nav>
 
   <main class="content">
@@ -90,6 +108,7 @@
             <span class="tag cloud">Docker</span>
             <span class="tag cloud">Kubernetes</span>
             <span class="tag cloud">Helm</span>
+            <span class="tag cloud">OpenShift</span>
           </div>
         </div>
 
@@ -103,6 +122,7 @@
             <span class="tag cicd">Jenkins</span>
             <span class="tag cicd">TeamCity</span>
             <span class="tag cicd">Spinnaker</span>
+            <span class="tag cicd">AutoSys</span>
             <span class="tag cicd">Gradle</span>
             <span class="tag cicd">Maven</span>
           </div>
@@ -133,6 +153,7 @@
             <span class="tag database">MySQL</span>
             <span class="tag database">MongoDB</span>
             <span class="tag database">Redis</span>
+            <span class="tag database">SQL</span>
           </div>
         </div>
 
@@ -171,7 +192,6 @@
             <span class="tag frontend">TypeScript</span>
             <span class="tag frontend">JavaScript</span>
             <span class="tag frontend">HTML/CSS</span>
-            <span class="tag frontend">Angular</span>
           </div>
         </div>
 
@@ -220,6 +240,7 @@
               <span class="job-tag">Java</span>
               <span class="job-tag">Spring</span>
               <span class="job-tag">Automation</span>
+              <span class="job-tag">Copilot</span>
             </div>
           </div>
         </div>
@@ -252,6 +273,7 @@
               <span class="job-tag">Kubernetes</span>
               <span class="job-tag">AWS</span>
               <span class="job-tag">CI/CD</span>
+              <span class="job-tag">Copilot</span>
             </div>
           </div>
         </div>
@@ -273,13 +295,15 @@
               <li>Maintained and enhanced enterprise banking applications using Java EE</li>
               <li>Implemented CI/CD quality gates with SonarQube and TeamCity</li>
               <li>Developed backend modules with Spring Framework for financial services</li>
-              <li>Participated in Angular/TypeScript frontend migration initiatives</li>
+              <li>Managed job scheduling and workload automation with AutoSys</li>
+              <li>Deployed and orchestrated containers on OpenShift platform</li>
             </ul>
             <div class="job-tags">
               <span class="job-tag">Java EE</span>
               <span class="job-tag">Spring</span>
-              <span class="job-tag">TypeScript</span>
-              <span class="job-tag">Angular</span>
+              <span class="job-tag">AutoSys</span>
+              <span class="job-tag">OpenShift</span>
+              <span class="job-tag">TeamCity</span>
             </div>
           </div>
         </div>
@@ -299,35 +323,18 @@
             </div>
             <ul class="job-highlights">
               <li>Developed backend systems with Java, Spring, and Gradle build automation</li>
+              <li>Built interactive frontend features using JavaScript and TypeScript</li>
+              <li>Designed and optimized SQL queries for PostgreSQL and MySQL databases</li>
               <li>Wrote unit tests using JUnit to ensure code quality and reliability</li>
-              <li>Customized WordPress plugins and built client-specific integrations</li>
               <li>Worked across the full stack with direct client communication and requirement gathering</li>
             </ul>
             <div class="job-tags">
               <span class="job-tag">Java</span>
               <span class="job-tag">Spring</span>
-              <span class="job-tag">WordPress</span>
-              <span class="job-tag">PHP</span>
+              <span class="job-tag">JavaScript</span>
+              <span class="job-tag">TypeScript</span>
+              <span class="job-tag">SQL</span>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Trusted By -->
-      <div class="trusted">
-        <h3>Trusted By</h3>
-        <div class="logos">
-          <div class="logo-item">
-            <img src="assets/epam.svg" alt="EPAM" />
-          </div>
-          <div class="logo-item">
-            <img src="assets/barclays.svg" alt="Barclays" />
-          </div>
-          <div class="logo-item">
-            <img src="assets/morganstanley.svg" alt="Morgan Stanley" />
-          </div>
-          <div class="logo-item">
-            <img src="assets/pwc.svg" alt="PwC" />
           </div>
         </div>
       </div>
@@ -368,6 +375,42 @@
       </div>
     </section>
   </main>
+
+  <!-- Trusted By - Bottom Section -->
+  <section class="trusted-section">
+    <div class="trusted-container">
+      <h3 class="trusted-title">Trusted By</h3>
+      <div class="company-logos">
+        <!-- EPAM -->
+        <div class="company-logo" data-company="epam">
+          <svg viewBox="0 0 200 50" class="logo-svg">
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="logo-text">EPAM</text>
+          </svg>
+        </div>
+        
+        <!-- Morgan Stanley -->
+        <div class="company-logo" data-company="morganstanley">
+          <svg viewBox="0 0 200 50" class="logo-svg">
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="logo-text">Morgan Stanley</text>
+          </svg>
+        </div>
+        
+        <!-- Barclays -->
+        <div class="company-logo" data-company="barclays">
+          <svg viewBox="0 0 200 50" class="logo-svg">
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="logo-text">Barclays</text>
+          </svg>
+        </div>
+        
+        <!-- PwC -->
+        <div class="company-logo" data-company="pwc">
+          <svg viewBox="0 0 200 50" class="logo-svg">
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="logo-text">PwC</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">

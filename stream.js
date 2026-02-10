@@ -88,6 +88,59 @@ class WikiStream {
 }
 
 // ========================================
+// THEME MANAGER
+// ========================================
+
+class ThemeManager {
+  constructor() {
+    this.toggle = document.querySelector('.theme-toggle');
+    this.storageKey = 'theme-preference';
+    this.theme = this.getStoredTheme() || this.getSystemTheme();
+    
+    this.init();
+  }
+
+  init() {
+    // Apply initial theme
+    this.applyTheme(this.theme);
+    
+    // Toggle button
+    this.toggle?.addEventListener('click', () => this.toggleTheme());
+    
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem(this.storageKey)) {
+        this.applyTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+  }
+
+  getSystemTheme() {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  getStoredTheme() {
+    return localStorage.getItem(this.storageKey);
+  }
+
+  applyTheme(theme) {
+    this.theme = theme;
+    document.documentElement.setAttribute('data-theme', theme);
+    
+    // Update toggle aria-label
+    if (this.toggle) {
+      this.toggle.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
+    }
+  }
+
+  toggleTheme() {
+    const newTheme = this.theme === 'dark' ? 'light' : 'dark';
+    this.applyTheme(newTheme);
+    localStorage.setItem(this.storageKey, newTheme);
+  }
+}
+
+// ========================================
 // MOBILE NAVIGATION
 // ========================================
 
@@ -213,6 +266,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
+  new ThemeManager();
   new WikiStream();
   new MobileNav();
   new ScrollAnimations();
