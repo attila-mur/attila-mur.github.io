@@ -14,7 +14,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background: linear-gradient(180deg, #0b0f1a 0%, #07090f 100%);
   color: #eaeaea;
   font-family: system-ui, sans-serif;
 }
@@ -62,9 +62,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: rgba(10, 12, 16, 0.75);
-  backdrop-filter: blur(8px);
+  padding: 1.6rem 4rem;
+  background: rgba(20, 24, 40, 0.85);
+  border-bottom: 2px solid rgba(154, 255, 200, 0.35);
+  backdrop-filter: blur(10px);
 }
 
 .nav-name {
@@ -95,11 +96,11 @@ body {
 .content {
   position: relative;
   z-index: 1;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 5rem 2rem;
+  padding: 6rem 3rem;
   background: var(--glass);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
 }
 
 .hero h1 {
@@ -118,11 +119,11 @@ section {
 }
 
 h2 {
-  font-size: 1.2rem;
-  letter-spacing: 0.1em;
+  font-size: 3.2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  opacity: 0.7;
-  margin-bottom: 1.2rem;
 }
 
 /* STACK */
