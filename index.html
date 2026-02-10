@@ -4,151 +4,375 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Attila Murvai – Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body id="top">
   <!-- Ambient data stream background -->
-  <div class="stream-column">
-    <ul id="stream"></ul>
+  <div class="stream-container">
+    <div class="stream-column" data-speed="slow"><ul></ul></div>
+    <div class="stream-column" data-speed="fast"><ul></ul></div>
+    <div class="stream-column" data-speed="medium"><ul></ul></div>
   </div>
 
-  <!-- Sticky navigation -->
+  <!-- Navigation -->
   <nav class="nav">
-    <a class="nav-name" href="#top">ATTILA MURVAI</a>
+    <a class="nav-logo" href="#top">
+      <span class="logo-bracket">&lt;</span>
+      <span class="logo-name">AM</span>
+      <span class="logo-bracket">/&gt;</span>
+    </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#stack">Stack</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <main class="content">
     <!-- HERO / ABOUT -->
     <section id="about" class="hero">
-  <h2>About</h2>
-  <p class="subtitle centered">
-    DevOps-oriented, self-taught backend developer with a strong problem-solving mindset.<br />
-    Passionate about automation, scalable systems, and clean architecture.<br />
-    Works well in Agile environments and contributes actively to team goals.
-  </p>
-</section>
+      <div class="hero-content">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1>Attila Murvai</h1>
+        <p class="hero-role">Software Engineer</p>
+        <p class="hero-tagline">
+          DevOps-oriented backend developer with a passion for automation, 
+          scalable systems, and clean architecture. I thrive in Agile environments 
+          and build tools that make teams more productive.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Get in Touch</a>
+          <a href="Attila_Murvai_CV.pdf" download class="btn btn-secondary">Download CV</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="terminal">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">profile.json</span>
+          </div>
+          <pre class="terminal-body"><code>{
+  "role": "Senior Software Engineer",
+  "focus": ["Backend", "DevOps", "Cloud"],
+  "experience": "5+ years",
+  "location": "Budapest, Hungary",
+  "available": true
+}</code></pre>
+        </div>
+      </div>
+    </section>
 
     <!-- STACK -->
     <section id="stack">
-  <h2>Tech Stack</h2>
-  <div class="stack-grid">
-    <div class="tag">Agile</div>
-    <div class="tag">Scrum</div>
-    <div class="tag">AWS</div>
-    <div class="tag">Docker</div>
-    <div class="tag">Kubernetes</div>
-    <div class="tag">Git</div>
-    <div class="tag">GitHub</div>
-    <div class="tag">Bitbucket</div>
-    <div class="tag">GitHub Actions</div>
-    <div class="tag">Jenkins</div>
-    <div class="tag">TeamCity</div>
-    <div class="tag">Spinnaker</div>
-    <div class="tag">Datadog</div>
-    <div class="tag">PagerDuty</div>
-    <div class="tag">Java</div>
-    <div class="tag">Kotlin</div>
-    <div class="tag">Spring</div>
-    <div class="tag">Hibernate</div>
-    <div class="tag">Microservices</div>
-    <div class="tag">RabbitMQ</div>
-    <div class="tag">PostgreSQL</div>
-    <div class="tag">MySQL</div>
-    <div class="tag">MongoDB</div>
-    <div class="tag">JUnit</div>
-    <div class="tag">Karate</div>
-    <div class="tag">Gradle</div>
-    <div class="tag">Maven</div>
-    <div class="tag">IntelliJ</div>
-    <div class="tag">Eclipse</div>
-    <div class="tag">HTML / CSS</div>
-    <div class="tag">JavaScript</div>
-    <div class="tag">TypeScript</div>
-    <div class="tag">Jira</div>
-    <div class="tag">SonarQube</div>
-    <div class="tag">Copilot</div>
-  </div>
-</section>
+      <h2>Tech Stack</h2>
+      <p class="section-intro">Technologies I work with daily</p>
+      
+      <div class="stack-categories">
+        <div class="stack-category">
+          <h3 class="category-label">
+            <span class="category-icon">☁️</span>
+            Cloud & Infrastructure
+          </h3>
+          <div class="tags">
+            <span class="tag cloud">AWS</span>
+            <span class="tag cloud">Docker</span>
+            <span class="tag cloud">Kubernetes</span>
+            <span class="tag cloud">Helm</span>
+          </div>
+        </div>
+
+        <div class="stack-category">
+          <h3 class="category-label">
+            <span class="category-icon">🔄</span>
+            CI/CD & Automation
+          </h3>
+          <div class="tags">
+            <span class="tag cicd">GitHub Actions</span>
+            <span class="tag cicd">Jenkins</span>
+            <span class="tag cicd">TeamCity</span>
+            <span class="tag cicd">Spinnaker</span>
+            <span class="tag cicd">Gradle</span>
+            <span class="tag cicd">Maven</span>
+          </div>
+        </div>
+
+        <div class="stack-category">
+          <h3 class="category-label">
+            <span class="category-icon">☕</span>
+            Backend Development
+          </h3>
+          <div class="tags">
+            <span class="tag backend">Java</span>
+            <span class="tag backend">Kotlin</span>
+            <span class="tag backend">Spring Boot</span>
+            <span class="tag backend">Hibernate</span>
+            <span class="tag backend">Microservices</span>
+            <span class="tag backend">RabbitMQ</span>
+          </div>
+        </div>
+
+        <div class="stack-category">
+          <h3 class="category-label">
+            <span class="category-icon">🗄️</span>
+            Databases
+          </h3>
+          <div class="tags">
+            <span class="tag database">PostgreSQL</span>
+            <span class="tag database">MySQL</span>
+            <span class="tag database">MongoDB</span>
+            <span class="tag database">Redis</span>
+          </div>
+        </div>
+
+        <div class="stack-category">
+          <h3 class="category-label">
+            <span class="category-icon">📊</span>
+            Monitoring & Observability
+          </h3>
+          <div class="tags">
+            <span class="tag monitoring">Datadog</span>
+            <span class="tag monitoring">PagerDuty</span>
+            <span class="tag monitoring">Grafana</span>
+            <span class="tag monitoring">Prometheus</span>
+          </div>
+        </div>
+
+        <div class="stack-category">
+          <h3 class="category-label">
+            <span class="category-icon">🧪</span>
+            Testing & Quality
+          </h3>
+          <div class="tags">
+            <span class="tag testing">JUnit</span>
+            <span class="tag testing">Karate</span>
+            <span class="tag testing">SonarQube</span>
+            <span class="tag testing">TestContainers</span>
+          </div>
+        </div>
+
+        <div class="stack-category">
+          <h3 class="category-label">
+            <span class="category-icon">🌐</span>
+            Frontend & Languages
+          </h3>
+          <div class="tags">
+            <span class="tag frontend">TypeScript</span>
+            <span class="tag frontend">JavaScript</span>
+            <span class="tag frontend">HTML/CSS</span>
+            <span class="tag frontend">Angular</span>
+          </div>
+        </div>
+
+        <div class="stack-category">
+          <h3 class="category-label">
+            <span class="category-icon">🛠️</span>
+            Tools & Practices
+          </h3>
+          <div class="tags">
+            <span class="tag tools">Git</span>
+            <span class="tag tools">GitHub</span>
+            <span class="tag tools">Bitbucket</span>
+            <span class="tag tools">IntelliJ IDEA</span>
+            <span class="tag tools">Jira</span>
+            <span class="tag tools">Agile/Scrum</span>
+            <span class="tag tools">GitHub Copilot</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- EXPERIENCE -->
     <section id="experience">
       <h2>Experience</h2>
+      <p class="section-intro">Where I've made an impact</p>
 
-      <div class="job">
-        <span class="date">AUG 2025 – Present · Budapest</span>
-        <h3>Morgan Stanley — Developer</h3>
-        <p>
-          Working on migration and hygiene initiatives to automate workflows
-          and improve operational efficiency.
-        </p>
+      <div class="timeline">
+        <div class="timeline-item current">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="job-header">
+              <div class="job-info">
+                <h3>Developer</h3>
+                <p class="company">Morgan Stanley</p>
+              </div>
+              <div class="job-meta">
+                <span class="date">Aug 2025 – Present</span>
+                <span class="location">Budapest</span>
+              </div>
+            </div>
+            <p class="job-description">
+              Working on migration and hygiene initiatives to automate workflows 
+              and improve operational efficiency across enterprise systems.
+            </p>
+            <div class="job-tags">
+              <span class="job-tag">Java</span>
+              <span class="job-tag">Spring</span>
+              <span class="job-tag">Automation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="job-header">
+              <div class="job-info">
+                <h3>Senior Software Engineer</h3>
+                <p class="company">EPAM Systems</p>
+              </div>
+              <div class="job-meta">
+                <span class="date">Feb 2022 – Aug 2025</span>
+                <span class="location">Budapest</span>
+              </div>
+            </div>
+            <ul class="job-highlights">
+              <li>Developed scalable backend microservices using Java and Kotlin with Spring Boot</li>
+              <li>Built CI/CD pipelines with GitHub Actions and Spinnaker for automated deployments</li>
+              <li>Deployed and managed services via Docker and Kubernetes in AWS cloud environments</li>
+              <li>Set up monitoring, alerting, and incident response using Datadog and PagerDuty</li>
+              <li>Implemented comprehensive automated testing with JUnit and Karate frameworks</li>
+              <li>Collaborated in Agile Scrum teams for a global hoteling platform serving enterprise clients</li>
+            </ul>
+            <div class="job-tags">
+              <span class="job-tag">Java</span>
+              <span class="job-tag">Kotlin</span>
+              <span class="job-tag">Spring Boot</span>
+              <span class="job-tag">Kubernetes</span>
+              <span class="job-tag">AWS</span>
+              <span class="job-tag">CI/CD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="job-header">
+              <div class="job-info">
+                <h3>Java Developer</h3>
+                <p class="company">Barclays</p>
+              </div>
+              <div class="job-meta">
+                <span class="date">Jan 2021 – Jan 2022</span>
+                <span class="location">Prague</span>
+              </div>
+            </div>
+            <ul class="job-highlights">
+              <li>Maintained and enhanced enterprise banking applications using Java EE</li>
+              <li>Implemented CI/CD quality gates with SonarQube and TeamCity</li>
+              <li>Developed backend modules with Spring Framework for financial services</li>
+              <li>Participated in Angular/TypeScript frontend migration initiatives</li>
+            </ul>
+            <div class="job-tags">
+              <span class="job-tag">Java EE</span>
+              <span class="job-tag">Spring</span>
+              <span class="job-tag">TypeScript</span>
+              <span class="job-tag">Angular</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="job-header">
+              <div class="job-info">
+                <h3>Fullstack Developer</h3>
+                <p class="company">Smartfront Kft.</p>
+              </div>
+              <div class="job-meta">
+                <span class="date">Oct 2018 – Dec 2020</span>
+                <span class="location">Budapest</span>
+              </div>
+            </div>
+            <ul class="job-highlights">
+              <li>Developed backend systems with Java, Spring, and Gradle build automation</li>
+              <li>Wrote unit tests using JUnit to ensure code quality and reliability</li>
+              <li>Customized WordPress plugins and built client-specific integrations</li>
+              <li>Worked across the full stack with direct client communication and requirement gathering</li>
+            </ul>
+            <div class="job-tags">
+              <span class="job-tag">Java</span>
+              <span class="job-tag">Spring</span>
+              <span class="job-tag">WordPress</span>
+              <span class="job-tag">PHP</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="job">
-        <span class="date">Feb 2022 – Aug 2025 · Budapest</span>
-        <h3>EPAM — Senior Software Engineer</h3>
-        <ul>
-          <li>Developed scalable backend microservices using Java and Kotlin with Spring Boot</li>
-          <li>Built CI/CD pipelines with GitHub Actions and Spinnaker</li>
-          <li>Deployed services via Docker and Kubernetes in cloud environments</li>
-          <li>Set up monitoring and incident response using Datadog and PagerDuty</li>
-          <li>Implemented automated tests with JUnit and Karate</li>
-          <li>Worked in Agile Scrum teams for a global hoteling platform</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <span class="date">Jan 2021 – Jan 2022 · Prague</span>
-        <h3>Barclays — Java Developer</h3>
-        <ul>
-          <li>Maintained enterprise banking applications using Java EE</li>
-          <li>Used SonarQube and TeamCity for CI/CD and quality gates</li>
-          <li>Implemented backend modules with Spring</li>
-          <li>Participated in Angular / TypeScript migration work</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <span class="date">Oct 2018 – Dec 2020 · Budapest</span>
-        <h3>Smartfront Kft. — Fullstack Developer</h3>
-        <ul>
-          <li>Developed backend systems with Java, Spring, and Gradle</li>
-          <li>Wrote unit tests using JUnit</li>
-          <li>Customized WordPress plugins and integrations</li>
-          <li>Worked across the stack with direct client communication</li>
-        </ul>
-      </div>
-
+      <!-- Trusted By -->
       <div class="trusted">
         <h3>Trusted By</h3>
         <div class="logos">
-  <img src="assets/epam.svg" alt="EPAM" />
-  <img src="assets/barclays.svg" alt="Barclays" />
-  <img src="assets/morganstanley.svg" alt="Morgan Stanley" />
-  <img src="assets/pwc.svg" alt="PwC" />
-</div>
-        <a class="cv-link" href="Attila_Murvai_CV.pdf" download>Download CV</a>
+          <div class="logo-item">
+            <img src="assets/epam.svg" alt="EPAM" />
+          </div>
+          <div class="logo-item">
+            <img src="assets/barclays.svg" alt="Barclays" />
+          </div>
+          <div class="logo-item">
+            <img src="assets/morganstanley.svg" alt="Morgan Stanley" />
+          </div>
+          <div class="logo-item">
+            <img src="assets/pwc.svg" alt="PwC" />
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact">
-      <h2>Contact</h2>
-      <div class="contact-cards">
-  <div class="contact-card">📍 Budapest</div>
-  <a class="contact-card" href="mailto:attila.murvai.dev@gmail.com">✉️ attila.murvai.dev@gmail.com</a>
-  <div class="contact-card">📞 +36 123 4567</div>
-  <a class="contact-card" href="https://github.com/yourname" target="_blank">GitHub</a>
-  <a class="contact-card" href="https://linkedin.com/in/yourname" target="_blank">LinkedIn</a>
-</div>
+      <h2>Let's Connect</h2>
+      <p class="section-intro">
+        I'm currently open to new opportunities. Whether you have a question or 
+        just want to say hi, I'll do my best to get back to you!
+      </p>
+
+      <div class="contact-grid">
+        <a href="mailto:attila.murvai.dev@gmail.com" class="contact-card">
+          <span class="contact-icon">📧</span>
+          <span class="contact-label">Email</span>
+          <span class="contact-value">attila.murvai.dev@gmail.com</span>
+        </a>
+        
+        <a href="https://github.com/yourname" target="_blank" rel="noopener" class="contact-card">
+          <span class="contact-icon">💻</span>
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">@attilamurvai</span>
+        </a>
+        
+        <a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener" class="contact-card">
+          <span class="contact-icon">🔗</span>
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">in/attilamurvai</span>
+        </a>
+        
+        <div class="contact-card">
+          <span class="contact-icon">📍</span>
+          <span class="contact-label">Location</span>
+          <span class="contact-value">Budapest, Hungary</span>
+        </div>
+      </div>
     </section>
   </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Designed & built by Attila Murvai · © 2025</p>
+  </footer>
 
   <script src="stream.js"></script>
 </body>
