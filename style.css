@@ -807,7 +807,7 @@ h2 {
   z-index: 1;
   background: var(--bg-primary);
   border-top: 1px solid var(--glass-border);
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
 }
 
 .trusted-container {
@@ -817,12 +817,12 @@ h2 {
 }
 
 .trusted-title {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .company-logos {
@@ -830,7 +830,7 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: 4rem;
 }
 
 .company-logo {
@@ -842,17 +842,17 @@ h2 {
 }
 
 .company-logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .logo-svg {
-  width: 140px;
-  height: 40px;
+  width: 180px;
+  height: 50px;
 }
 
 .logo-text {
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   fill: var(--text-muted);
   transition: fill var(--transition-base);
@@ -862,7 +862,7 @@ h2 {
   fill: var(--text-primary);
 }
 
-/* Company-specific styling */
+/* Company-specific hover colors */
 .company-logo[data-company="epam"]:hover .logo-text {
   fill: #00a94f;
 }
