@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attila Murvai - CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       BASE STYLES
+       ======================================== */
+    :root {
+      --primary: #0f766e;
+      --primary-light: #14b8a6;
+      --text-dark: #1e293b;
+      --text-medium: #475569;
+      --text-light: #64748b;
+      --bg-main: #ffffff;
+      --bg-sidebar: #f1f5f9;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: var(--text-dark);
+      background: #f8fafc;
+    }
+
+    /* ========================================
+       PAGE LAYOUT
+       ======================================== */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 10mm auto;
+      background: var(--bg-main);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      display: grid;
+      grid-template-columns: 65mm 145mm;
+    }
+
+    /* ========================================
+       SIDEBAR
+       ======================================== */
+    .sidebar {
+      background: var(--bg-sidebar);
+      padding: 15mm 8mm 15mm;
+      display: flex;
+      flex-direction: column;
+      gap: 5mm;
+    }
+
+    .header {
+      text-align: center;
+      padding-bottom: 4mm;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .name {
+      font-size: 16pt;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .title {
+      font-size: 9pt;
+      color: var(--primary);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 2mm;
+    }
+
+    /* Contact */
+    .sidebar-section h3 {
+      font-size: 8pt;
+      font-weight: 600;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 2.5mm;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 2mm;
+      margin-bottom: 1.5mm;
+      font-size: 8.5pt;
+      color: var(--text-medium);
+    }
+
+    .contact-item .icon {
+      width: 3.5mm;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .contact-item a {
+      color: var(--text-medium);
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: var(--primary);
+    }
+
+    /* Skills */
+    .skill-category {
+      margin-bottom: 3.5mm;
+    }
+
+    .skill-category h4 {
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5mm;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5mm;
+    }
+
+    .skill-tag {
+      font-size: 7pt;
+      padding: 1mm 2.5mm;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 2mm;
+      color: var(--text-medium);
+    }
+
+    /* ========================================
+       MAIN CONTENT
+       ======================================== */
+    .main {
+      padding: 15mm 12mm 15mm;
+      display: flex;
+      flex-direction: column;
+      gap: 4.5mm;
+    }
+
+    .section {
+      margin-bottom: 2mm;
+    }
+
+    .section-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding-bottom: 2mm;
+      border-bottom: 2px solid var(--primary);
+      margin-bottom: 3.5mm;
+    }
+
+    /* Experience */
+    .job {
+      margin-bottom: 4.5mm;
+      page-break-inside: avoid;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1mm;
+    }
+
+    .job-title {
+      font-size: 10.5pt;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .job-company {
+      font-size: 9pt;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .job-meta {
+      text-align: right;
+    }
+
+    .job-date {
+      font-size: 8.5pt;
+      color: var(--text-light);
+    }
+
+    .job-location {
+      font-size: 8pt;
+      color: var(--text-light);
+    }
+
+    .job-description {
+      font-size: 9pt;
+      color: var(--text-medium);
+      margin-bottom: 1.5mm;
+    }
+
+    .job-highlights {
+      padding-left: 4mm;
+      margin-bottom: 2mm;
+    }
+
+    .job-highlights li {
+      font-size: 8.5pt;
+      color: var(--text-medium);
+      margin-bottom: 0.8mm;
+    }
+
+    .job-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5mm;
+    }
+
+    .job-tag {
+      font-size: 7pt;
+      padding: 0.8mm 2mm;
+      background: rgba(15, 118, 110, 0.08);
+      color: var(--primary);
+      border-radius: 1.5mm;
+      font-weight: 500;
+    }
+
+    /* About */
+    .about-text {
+      font-size: 9.5pt;
+      color: var(--text-medium);
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       PRINT STYLES
+       ======================================== */
+    @media print {
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      body {
+        background: none;
+      }
+
+      .page {
+        margin: 0;
+        box-shadow: none;
+        width: 210mm;
+        height: 297mm;
+      }
+
+      .job {
+        page-break-inside: avoid;
+      }
+
+      .section {
+        page-break-inside: avoid;
+      }
+    }
+
+    /* ========================================
+       SCREEN PREVIEW
+       ======================================== */
+    @media screen {
+      .print-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 12px 24px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(15, 118, 110, 0.3);
+        transition: all 0.2s ease;
+        z-index: 1000;
+      }
+
+      .print-btn:hover {
+        background: var(--primary-light);
+        transform: translateY(-2px);
+      }
+
+      @media print {
+        .print-btn {
+          display: none;
+        }
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">📄 Save as PDF</button>
+
+  <div class="page">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="header">
+        <div class="name">Attila Murvai</div>
+        <div class="title">Software Engineer</div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Contact</h3>
+        <div class="contact-item">
+          <span class="icon">📍</span>
+          <span>Budapest, Hungary</span>
+        </div>
+        <div class="contact-item">
+          <span class="icon">✉️</span>
+          <a href="mailto:attila.murvai.dev@gmail.com">attila.murvai.dev@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="icon">🔗</span>
+          <a href="https://linkedin.com/in/yourname">linkedin.com/in/attilamurvai</a>
+        </div>
+        <div class="contact-item">
+          <span class="icon">💻</span>
+          <a href="https://github.com/yourname">github.com/attilamurvai</a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Skills</h3>
+        
+        <div class="skill-category">
+          <h4>Cloud & DevOps</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">OpenShift</span>
+            <span class="skill-tag">Helm</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>CI/CD</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">GitHub Actions</span>
+            <span class="skill-tag">Jenkins</span>
+            <span class="skill-tag">TeamCity</span>
+            <span class="skill-tag">Spinnaker</span>
+            <span class="skill-tag">AutoSys</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Backend</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Kotlin</span>
+            <span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag">Hibernate</span>
+            <span class="skill-tag">Microservices</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Databases</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Redis</span>
+            <span class="skill-tag">SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Monitoring</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Datadog</span>
+            <span class="skill-tag">PagerDuty</span>
+            <span class="skill-tag">Grafana</span>
+            <span class="skill-tag">Prometheus</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Testing</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">JUnit</span>
+            <span class="skill-tag">Karate</span>
+            <span class="skill-tag">SonarQube</span>
+            <span class="skill-tag">TestContainers</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Frontend</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">HTML/CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Tools</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">IntelliJ IDEA</span>
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">Copilot</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- About -->
+      <section class="section">
+        <h2 class="section-title">Profile</h2>
+        <p class="about-text">
+          DevOps-oriented backend developer with 5+ years of experience building scalable systems. 
+          Passionate about automation, clean architecture, and delivering reliable software. 
+          Strong collaborator in Agile environments with a track record of improving team productivity 
+          through better tooling and processes.
+        </p>
+      </section>
+
+      <!-- Experience -->
+      <section class="section">
+        <h2 class="section-title">Experience</h2>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">Developer</div>
+              <div class="job-company">Morgan Stanley</div>
+            </div>
+            <div class="job-meta">
+              <div class="job-date">Aug 2025 – Present</div>
+              <div class="job-location">Budapest</div>
+            </div>
+          </div>
+          <p class="job-description">
+            Working on migration and hygiene initiatives to automate workflows and improve 
+            operational efficiency across enterprise systems.
+          </p>
+          <div class="job-tags">
+            <span class="job-tag">Java</span>
+            <span class="job-tag">Spring</span>
+            <span class="job-tag">Automation</span>
+            <span class="job-tag">Copilot</span>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">Senior Software Engineer</div>
+              <div class="job-company">EPAM Systems</div>
+            </div>
+            <div class="job-meta">
+              <div class="job-date">Feb 2022 – Aug 2025</div>
+              <div class="job-location">Budapest</div>
+            </div>
+          </div>
+          <ul class="job-highlights">
+            <li>Developed scalable backend microservices using Java and Kotlin with Spring Boot</li>
+            <li>Built CI/CD pipelines with GitHub Actions and Spinnaker for automated deployments</li>
+            <li>Deployed and managed services via Docker and Kubernetes in AWS environments</li>
+            <li>Set up monitoring and incident response using Datadog and PagerDuty</li>
+            <li>Implemented automated testing with JUnit and Karate frameworks</li>
+          </ul>
+          <div class="job-tags">
+            <span class="job-tag">Java</span>
+            <span class="job-tag">Kotlin</span>
+            <span class="job-tag">Spring Boot</span>
+            <span class="job-tag">Kubernetes</span>
+            <span class="job-tag">AWS</span>
+            <span class="job-tag">Copilot</span>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">Java Developer</div>
+              <div class="job-company">Barclays</div>
+            </div>
+            <div class="job-meta">
+              <div class="job-date">Jan 2021 – Jan 2022</div>
+              <div class="job-location">Prague</div>
+            </div>
+          </div>
+          <ul class="job-highlights">
+            <li>Maintained enterprise banking applications using Java EE</li>
+            <li>Implemented CI/CD quality gates with SonarQube and TeamCity</li>
+            <li>Managed job scheduling and automation with AutoSys</li>
+            <li>Deployed containers on OpenShift platform</li>
+          </ul>
+          <div class="job-tags">
+            <span class="job-tag">Java EE</span>
+            <span class="job-tag">Spring</span>
+            <span class="job-tag">AutoSys</span>
+            <span class="job-tag">OpenShift</span>
+            <span class="job-tag">TeamCity</span>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">Fullstack Developer</div>
+              <div class="job-company">Smartfront Kft.</div>
+            </div>
+            <div class="job-meta">
+              <div class="job-date">Oct 2018 – Dec 2020</div>
+              <div class="job-location">Budapest</div>
+            </div>
+          </div>
+          <ul class="job-highlights">
+            <li>Developed backend systems with Java, Spring, and Gradle</li>
+            <li>Built frontend features using JavaScript and TypeScript</li>
+            <li>Designed and optimized SQL queries for PostgreSQL and MySQL</li>
+            <li>Wrote unit tests using JUnit to ensure code quality</li>
+          </ul>
+          <div class="job-tags">
+            <span class="job-tag">Java</span>
+            <span class="job-tag">Spring</span>
+            <span class="job-tag">JavaScript</span>
+            <span class="job-tag">TypeScript</span>
+            <span class="job-tag">SQL</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
