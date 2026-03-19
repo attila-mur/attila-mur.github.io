@@ -52,6 +52,7 @@ A minimal, dependency-free portfolio site built with vanilla HTML, CSS & JavaScr
 |---------|-------------|-------|
 | [**Language Learner**](https://language-learner-v2.onrender.com/) | Flashcard-style vocabulary app | Go, Docker |
 | [**Bloom Scroller**](https://bloom-scroller.onrender.com) | Full-screen plant photo viewer via iNaturalist | React, Vite |
+| [**Pi Monitor**](https://pi-monitor-cv3u.onrender.com/) | Real-time monitoring of my Raspberry Pi NAS | WebSocket, Pi, Linux |
 
 ## Run Locally
 
