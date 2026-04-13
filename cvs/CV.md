@@ -23,7 +23,7 @@ AWS, Docker, Kubernetes, Helm, OpenShift
 GitHub Actions, Jenkins, TeamCity, Spinnaker, AutoSys, Gradle, Maven
 
 **Backend Development**  
-Java, Kotlin, Spring Boot, Hibernate, Microservices, RabbitMQ
+Java, Kotlin, Spring Boot, Hibernate, Flink, Microservices, RabbitMQ
 
 **Databases**  
 PostgreSQL, MySQL, MongoDB, Redis, SQL
